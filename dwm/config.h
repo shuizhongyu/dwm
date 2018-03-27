@@ -70,7 +70,7 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact      = 0.60; /* factor of master area size [0.05..0.95] */
+static const float mfact      = 0.50; /* factor of master area size [0.05..0.95] */
 static const int nmaster      = 1;    /* number of clients in master area */
 static const Bool resizehints = False; /*True;*/ /* True means respect size hints in tiled resizals */
 
@@ -98,8 +98,8 @@ static const char *termcmd[]  = { "xterm", NULL };
 //static const char *eccmd[] = { "emacsclient", "-n", "-c", "-a", "", NULL};
 //static const char *fmcmd[] = { "thunar", NULL };
 static const char *fmcmd[] = { "xfe", NULL };
-static const char *volumedown[] = { "amixer", "set", "Master", "5%-", NULL };
-static const char *volumeup[]   = { "amixer", "set", "Master", "5%+", NULL };
+static const char *volumedown[] = { "amixer", "set", "Master", "3%-", NULL };
+static const char *volumeup[]   = { "amixer", "set", "Master", "3%+", NULL };
 //static const char *mute[]       = { "amixer", "set", "Master", "toggle", NULL };
 static const char *browser[]     = { "chromium-browser", NULL };
 //static const char *notebook[]     = { "WizNote", NULL };
