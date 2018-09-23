@@ -103,15 +103,19 @@ static const char *volumeup[]   = { "amixer", "set", "Master", "3%+", NULL };
 //static const char *mute[]       = { "amixer", "set", "Master", "toggle", NULL };
 static const char *browser[]     = { "chromium-browser", NULL };
 //static const char *notebook[]     = { "WizNote", NULL };
+static const char url[]            = "https://app.yinxiang.com";
+static const char *notebook[]     = { "chromium-browser","--app=https://app.yinxiang.com/Home.action" ,NULL };
 static const char *lockscreen[]     = { "slock", NULL };
+static const char *picviewer[]     = { "gthumb", NULL };
 
 static Key keys[] = {
 	/* modifier                  key           function        argument */
 	{ MODKEY,                    XK_r,         spawn,          {.v = dmenucmd } },
 	{ MODKEY,                    XK_Return,    spawn,          {.v = termcmd } },
 	{ MODKEY,                    XK_e,         spawn,          {.v = fmcmd } },
-	//{ MODKEY,                    XK_t,         spawn,          {.v = notebook } },
+	{ MODKEY,                    XK_o,         spawn,          {.v = notebook} },
 	{ MODKEY,                    XK_c,         spawn,          {.v = browser } },
+	{ MODKEY,                    XK_g,         spawn,          {.v = picviewer} },
 	{ MODKEY|ShiftMask,                    XK_l,         spawn,          {.v = lockscreen } },
 	{ MODKEY,                    XK_b,         togglebar,      {0} },
 	{ MODKEY,                    XK_w,         focusstack,     {.i = +1 } },
@@ -137,7 +141,7 @@ static Key keys[] = {
 //	{ MODKEY,                    XK_0,         view,           {.ui = ~0 } },
 //	{ MODKEY|ShiftMask,          XK_0,         tag,            {.ui = ~0 } },
 //	{ MODKEY,                    XK_Caps_Lock, focusmon,       {.i = -1 } },
-	{ MODKEY,                    XK_n,     	   dycycle,        {.i = -1 } },
+//  { MODKEY,                    XK_n,     	   dycycle,        {.i = -1 } },
 	{ MODKEY,                    XK_m,  	   dycycle,        {.i = +1 } },
 	{ MODKEY,                    XK_Left,      dycycle,        {.i = -1 } },
 	{ MODKEY,                    XK_Right,     dycycle,        {.i = +1 } },
