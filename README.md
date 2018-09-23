@@ -3,7 +3,7 @@ my desktop environment  
 主页：dwm.suckless.org  
   
 桌面环境设置文件:   
-config.h,config.mk  
+config.h     
 安装使用：   
 dotfile文件放置于home目录下   
 .xinitrc .Xdefaults   
