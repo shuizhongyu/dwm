@@ -9,17 +9,18 @@ fcitx &
 
 
 # auto start
-killall stardict
-killall wicd-gtk
-killall tp-button
-stardict &
-wicd-gtk &
-/home/hch/work/tp-button/tp-button &
+#killall stardict
+#startdict&
+#killall wicd-client
+#wicd-client &
+#killall tp-button
 
 
 # X defaults
+#xrdb ~/.Xdefaults
 xrdb ~/.Xdefaults
-
+#xrdb ~/.Xnetwork
+#
 
 # touch pad
 ## Acer
@@ -52,27 +53,41 @@ synclient MiddleButtonAreaBottom=2000
 
 
 # screen output
-xrandr --output eDP1 --auto
-xrandr --output VGA1 --right-of eDP1 --auto
-xrandr --output HDMI1 --right-of VGA1 --auto
+xrandr --output VGA-0 --auto
+#xrandr --output DFP5 --right-of DFP1 --auto
+#xrandr --output VGA-0 --right-of HDMI-0 --auto
+xrandr --output HDMI-0 --left-of VGA-0 --auto
 
-xgamma -rgamma 1.0 -ggamma 0.9 -bgamma 0.8
+xgamma -rgamma 1.0 -ggamma 1.0 -bgamma 1.0
 
 # status bar
 while true; do
 	line="`cat /sys/class/power_supply/BAT0/status`"
-	line="$line `cat /sys/class/power_supply/BAT0/capacity`%"
+	#line="$line `cat /sys/class/power_supply/BAT0/capacity`%"
+	line="$line `cat /sys/class/power_supply/BAT0/capacity`"
 	line="$line `date '+%a %m-%d %H:%M:%S %Z'`"
 	xsetroot -name "$line"
 	sleep 1
 done &
 
 # wallpaper
-feh --bg-fill /usr/share/backgrounds/gnome/Stones.jpg
+#feh --bg-fill /usr/share/backgrounds/Dans_ma_bulle_by_Christophe_Weibel.jpg
+feh --bg-fill /home/ljx/Pictures/wallpaper/6.jpeg
 
-# keynav
+#auto start
 killall keynav
 keynav &
 
+killall parcellite
+parcellite &
+
+#killall shutter
+#shutter&
+
+killall stardict
+stardict -h&
+
+
 # start dwm
 dwm > /tmp/dwm.log 2>&1
+#/home/xyd/btw/dwm/dwm
